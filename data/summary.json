@@ -1,0 +1,22 @@
+{
+  "currencies": ["USD", "GBP", "EUR", "CAD", "AUD"],
+  "defaultUnit": "coffee",
+  "chips": [
+    "coffee",
+    "pint",
+    "lunch",
+    "cinema",
+    "fuel-tank",
+    "streaming-month",
+    "trainers",
+    "rent-month"
+  ],
+  "compareSeed": ["coffee", "pint", "fuel-tank", "streaming-month", "rent-month"],
+  "compareMax": 5,
+  "dotField": {
+    "tileBelow": 50,
+    "rescaleAbove": 20000,
+    "blockSize": 100,
+    "maxFieldHeight": 560
+  }
+}

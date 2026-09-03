@@ -308,16 +308,26 @@ function renderMilestones(el, { items, unitItem, state, count, onPromote }) {
   if (!Number.isFinite(count) || count <= 0 || !unitItem) return;
   const words = unitWords(unitItem);
   const picks = pickMilestones(items, unitItem, state.currency, count);
-  picks.forEach((p, idx) => {
+  // Declutter by rendered position: labels need real horizontal room.
+  const placed = [];
+  for (const p of picks) {
+    const pos = (p.equiv / count) * 100;
+    if (pos < 1.5 || pos > 98) continue;
+    if (placed.length && pos - placed[placed.length - 1].pos < 9) continue;
+    placed.push({ ...p, pos });
+  }
+  placed.forEach((p, idx) => {
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "milestone" + (idx % 2 ? " row-2" : "");
+    const crowded = (idx > 0 && p.pos - placed[idx - 1].pos < 20) ||
+      (idx < placed.length - 1 && placed[idx + 1].pos - p.pos < 20);
+    btn.className = "milestone" + (crowded && idx % 2 ? " row-2" : "");
     const short = p.item.short || unitWords(p.item).singular;
     btn.textContent = `${short} = ${formatCount(p.equiv)}`;
     const label = `Your ${unitWords(p.item).singular} equals ${formatCount(p.equiv)} ${words.plural}. Make it the unit.`;
     btn.title = label;
     btn.setAttribute("aria-label", label);
-    btn.style.left = `${Math.min(99, Math.max(1, (p.equiv / count) * 100))}%`;
+    btn.style.left = `${p.pos}%`;
     btn.addEventListener("click", () => onPromote(p.item.id));
     el.appendChild(btn);
   });
@@ -538,7 +548,7 @@ export function initSummary({ els, state, config, getItems }) {
       countUp(cells[`${period}-hours`], hours, formatCount);
       countUp(cells[`${period}-days`], days, formatCount);
     }
-    els.colUnits.textContent = unitItem ? capitalize(words.plural) : "Units";
+    els.colUnits.textContent = "Units";
 
     // Identity sentence.
     if (b) {

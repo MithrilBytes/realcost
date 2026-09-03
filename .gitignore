@@ -1,0 +1,19 @@
+# internal working documents, never committed
+SPEC.md
+*.spec.md
+notes/
+docs-internal/
+
+# secrets
+.env
+.env.*
+*.pem
+*.key
+
+# machine noise
+.DS_Store
+Thumbs.db
+node_modules/
+
+# local tooling config
+.claude/

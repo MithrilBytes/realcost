@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Enter your real salary and see everyday prices as the hours and minutes of working life they cost. Everything stays in your browser.">
+  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#17120F" media="(prefers-color-scheme: dark)">
+  <title>RealCost: prices in hours of your life</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" href="fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#items">Skip to the item grid</a>
+
+  <header class="masthead">
+    <div class="shell">
+      <p class="brand">RealCost</p>
+      <h1 class="premise">What does it cost in hours of your life?</h1>
+      <p class="sub">Enter your real salary. Every price becomes the working time it takes to earn it. Nothing you type leaves this page.</p>
+
+      <form id="salary-form" class="salary-form" autocomplete="off">
+        <div class="field grow">
+          <label for="salary">Annual salary</label>
+          <input id="salary" name="salary" type="text" inputmode="decimal" spellcheck="false" placeholder="48,000" aria-describedby="rate-line">
+        </div>
+        <div class="field">
+          <label for="currency">Currency</label>
+          <select id="currency" name="currency"></select>
+        </div>
+      </form>
+
+      <p class="rate-line" id="rate-line" aria-live="polite">Enter a salary to see your hourly rate.</p>
+
+      <details class="assumptions" id="assumptions">
+        <summary>Assumptions</summary>
+        <div class="assumptions-body">
+          <div class="assumptions-grid">
+            <div class="field">
+              <label for="hours-week">Hours per week <span class="default-tag">default 40</span></label>
+              <input id="hours-week" type="number" min="1" max="100" step="0.5" value="40">
+            </div>
+            <div class="field">
+              <label for="weeks-year">Working weeks per year <span class="default-tag">default 48</span></label>
+              <input id="weeks-year" type="number" min="1" max="52" step="1" value="48">
+            </div>
+            <fieldset class="field basis">
+              <legend>Pay basis <span class="default-tag">default gross</span></legend>
+              <label class="radio"><input type="radio" name="pay-basis" id="basis-gross" value="gross" checked> Gross</label>
+              <label class="radio"><input type="radio" name="pay-basis" id="basis-takehome" value="takeHome"> Take-home</label>
+              <label class="pct" for="takehome-pct"><span class="visually-hidden">Take-home percentage</span>
+                <input id="takehome-pct" type="number" min="1" max="100" step="1" value="70" disabled> <span aria-hidden="true">%</span>
+              </label>
+            </fieldset>
+          </div>
+          <p class="assumptions-note">The take-home percentage is your own estimate of pay after deductions, not tax advice.</p>
+          <div class="remember-row">
+            <label class="check"><input type="checkbox" id="remember"> Remember my salary on this device</label>
+            <button type="button" id="forget" class="ghost">Forget it</button>
+          </div>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="shell">
+      <h2 id="hero-title" class="section-title">Your year, in units you choose</h2>
+      <div class="chips-bar">
+        <div class="chips" id="unit-chips" role="group" aria-label="Summary unit"></div>
+        <button type="button" id="compare-toggle" class="chip chip-mode" aria-pressed="false">Compare units</button>
+      </div>
+
+      <div class="hero-body" id="hero-single">
+        <div class="hero-text">
+          <p class="headline" id="headline">
+            <span class="line small" id="hl-intro">Your year is</span>
+            <span class="line" id="hl-hours-line"><span class="giant" id="hl-hours">1,920</span> <span class="giant-label" id="hl-hours-label">working hours.</span></span>
+            <span class="line small" id="hl-bridge">Enter your salary to see what it buys.</span>
+            <span class="line" id="hl-units-line" hidden><span class="giant accent" id="hl-units">0</span> <span class="giant-label" id="hl-units-label"></span></span>
+          </p>
+          <p class="facts" id="unit-facts"></p>
+          <table class="breakdown" id="breakdown">
+            <caption class="visually-hidden">Units, hours, and working days per day, week, month, and year</caption>
+            <thead>
+              <tr><td></td><th scope="col" id="col-units">Units</th><th scope="col">Hours</th><th scope="col">Days</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Per day</th><td data-cell="day-units"></td><td data-cell="day-hours"></td><td data-cell="day-days"></td></tr>
+              <tr><th scope="row">Per week</th><td data-cell="week-units"></td><td data-cell="week-hours"></td><td data-cell="week-days"></td></tr>
+              <tr><th scope="row">Per month</th><td data-cell="month-units"></td><td data-cell="month-hours"></td><td data-cell="month-days"></td></tr>
+              <tr><th scope="row">Per year</th><td data-cell="year-units"></td><td data-cell="year-hours"></td><td data-cell="year-days"></td></tr>
+            </tbody>
+          </table>
+          <p class="identity" id="identity"></p>
+        </div>
+
+        <div class="hero-field">
+          <div class="milestones" id="milestones" aria-label="Other items measured in the chosen unit"></div>
+          <div class="field-wrap" id="field-wrap">
+            <canvas id="dot-canvas" aria-hidden="true"></canvas>
+            <div class="tile-field" id="tile-field" hidden></div>
+            <div class="dot-tip" id="dot-tip" role="status" hidden></div>
+          </div>
+          <p class="legend" id="field-legend">The field fills in once there is a salary to draw.</p>
+          <p class="visually-hidden" id="field-alt" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="hero-compare" id="hero-compare" hidden>
+        <p class="compare-hint">Pick up to five units above. Bars show the working time one unit costs.</p>
+        <ol class="compare-rows" id="compare-rows"></ol>
+      </div>
+    </div>
+  </section>
+
+  <div class="ratebar" id="ratebar" aria-hidden="true" hidden>
+    <div class="shell"><span id="ratebar-text"></span></div>
+  </div>
+
+  <main>
+    <section class="items" id="items" aria-labelledby="items-title">
+      <div class="shell">
+        <h2 class="section-title" id="items-title">Everything, in your time</h2>
+        <div class="controls">
+          <div class="field grow">
+            <label for="search" class="visually-hidden">Search items</label>
+            <input id="search" type="search" placeholder="Search items">
+          </div>
+          <div class="field">
+            <label for="category" class="visually-hidden">Category</label>
+            <select id="category"><option value="all">All categories</option></select>
+          </div>
+          <div class="field">
+            <label for="sort" class="visually-hidden">Sort</label>
+            <select id="sort">
+              <option value="time">Sort by time</option>
+              <option value="price">Sort by price</option>
+              <option value="name">Sort by name</option>
+            </select>
+          </div>
+          <button type="button" id="log-toggle" class="chip chip-mode" aria-pressed="false" title="Bars use a logarithmic scale">Log bars</button>
+        </div>
+        <ul class="grid" id="grid"></ul>
+        <p class="grid-empty" id="grid-empty" hidden>No items match. Clear the search or pick another category.</p>
+
+        <form id="custom-form" class="custom-form">
+          <h3>Add your own</h3>
+          <div class="custom-fields">
+            <div class="field grow">
+              <label for="custom-name">Name</label>
+              <input id="custom-name" type="text" maxlength="60" placeholder="Ramen night">
+            </div>
+            <div class="field">
+              <label for="custom-price">Price <span id="custom-currency-tag"></span></label>
+              <input id="custom-price" type="text" inputmode="decimal" placeholder="14.50">
+            </div>
+            <button type="submit" class="solid">Add item</button>
+          </div>
+          <p class="custom-note" id="custom-note">Custom items stay in this browser tab.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="ledger-panel" aria-labelledby="ledger-title">
+      <div class="shell">
+        <h2 class="section-title" id="ledger-title">Or your year could buy&hellip;</h2>
+        <p class="ledger-hint" id="ledger-hint">Your full effective salary, spent on one thing at a time. Select a row to make it the unit above.</p>
+        <ol class="ledger" id="ledger"></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="share-row">
+        <button type="button" id="copy-link" class="solid">Copy shareable link</button>
+        <label class="check"><input type="checkbox" id="include-salary"> Include salary in link</label>
+        <span class="warning" id="share-warning" hidden>The link will contain your salary in plain text.</span>
+        <span class="copied" id="copy-done" role="status"></span>
+      </div>
+      <p>Prices are static, dated, and linked to their sources. Your salary is used for math in this browser tab and is never transmitted, stored, or measured; there are no analytics and no third-party requests.</p>
+      <p>
+        <a href="https://github.com/MithrilBytes/realcost" rel="noopener">Fork this on GitHub</a>
+        <span aria-hidden="true">&middot;</span> catalog as of <span id="data-asof">2026-09</span>
+        <span aria-hidden="true">&middot;</span> <a href="LICENSE" rel="noopener">MIT license</a>
+      </p>
+    </div>
+  </footer>
+
+  <dialog class="picker" id="picker" aria-labelledby="picker-title">
+    <h3 id="picker-title">Choose a unit</h3>
+    <div class="field">
+      <label for="picker-search" class="visually-hidden">Search the catalog</label>
+      <input id="picker-search" type="search" placeholder="Search the catalog">
+    </div>
+    <ul class="picker-list" id="picker-list"></ul>
+    <button type="button" class="ghost" id="picker-close">Close</button>
+  </dialog>
+
+  <noscript><p class="noscript">RealCost does all of its math with JavaScript, entirely in your browser. Enable JavaScript to use it.</p></noscript>
+</body>
+</html>

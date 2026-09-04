@@ -6,11 +6,10 @@
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
   <meta name="description" content="Enter your real salary and see everyday prices as the hours and minutes of working life they cost. Everything stays in your browser.">
-  <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#17120F" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F7F8FA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0F17" media="(prefers-color-scheme: dark)">
   <title>RealCost: prices in hours of your life</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preload" href="fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <script type="module" src="js/app.js"></script>
@@ -23,6 +22,12 @@
       <p class="brand">RealCost</p>
       <h1 class="premise">What does it cost in hours of your life?</h1>
       <p class="sub">Enter your real salary. Every price becomes the working time it takes to earn it. Nothing you type leaves this page.</p>
+
+      <ul class="badges">
+        <li class="badge">Runs 100% in your browser</li>
+        <li class="badge">No tracking, no accounts</li>
+        <li class="badge">Every price sourced and dated</li>
+      </ul>
 
       <form id="salary-form" class="salary-form" autocomplete="off">
         <div class="field grow">
@@ -136,6 +141,36 @@
         </div>
         <p class="visually-hidden" id="day-alt"></p>
         <p class="legend">Each dot is one catalog item, placed where your day has earned it. Select a dot to make it the summary unit.</p>
+      </div>
+    </section>
+
+    <section class="charts-section" aria-labelledby="charts-title">
+      <div class="shell">
+        <p class="eyebrow">The angles</p>
+        <h2 class="section-title" id="charts-title">Two more ways to see it</h2>
+        <div class="charts-grid">
+          <div class="panel">
+            <h3 class="panel-title">The whole catalog, once</h3>
+            <p class="panel-sub" id="donut-sub">Buy one of everything and this is the bill, in working time.</p>
+            <div class="donut-layout">
+              <div class="viz-wrap" id="donut-wrap">
+                <svg id="donut-svg" aria-hidden="true"></svg>
+                <div class="viz-tip" id="donut-tip" hidden></div>
+              </div>
+              <ul class="chart-legend" id="donut-legend"></ul>
+            </div>
+            <p class="visually-hidden" id="donut-alt"></p>
+          </div>
+          <div class="panel">
+            <h3 class="panel-title">What one hour is worth</h3>
+            <p class="panel-sub" id="line-sub">Your hourly rate if the same pay covered a different week. Select a point on the curve to try it.</p>
+            <div class="viz-wrap" id="line-wrap">
+              <svg id="line-svg" aria-hidden="true"></svg>
+              <div class="viz-tip" id="line-tip" hidden></div>
+            </div>
+            <p class="visually-hidden" id="line-alt"></p>
+          </div>
+        </div>
       </div>
     </section>
     <section class="items" id="items" aria-labelledby="items-title">

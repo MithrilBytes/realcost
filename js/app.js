@@ -58,6 +58,17 @@ function collectEls() {
     spreadWrap: $("spread-wrap"),
     spreadInfo: $("spread-info"),
     spreadAlt: $("spread-alt"),
+    donutSvg: $("donut-svg"),
+    donutTip: $("donut-tip"),
+    donutWrap: $("donut-wrap"),
+    donutLegend: $("donut-legend"),
+    donutAlt: $("donut-alt"),
+    donutSub: $("donut-sub"),
+    lineSvg: $("line-svg"),
+    lineTip: $("line-tip"),
+    lineWrap: $("line-wrap"),
+    lineAlt: $("line-alt"),
+    lineSub: $("line-sub"),
     infoItemCount: $("info-item-count"),
     infoCurrencyCount: $("info-currency-count"),
     search: $("search"),
@@ -126,7 +137,14 @@ async function boot() {
   const summary = initSummary({ els, state, config, getItems });
 
   const promoteQuiet = (id) => state.patch({ compareOn: false, unit: id });
-  const viz = initViz({ els, state, getItems, onPromote: promoteQuiet });
+  const viz = initViz({
+    els,
+    state,
+    getItems,
+    getCatalog: () => catalog,
+    onPromote: promoteQuiet,
+    onSetHours: (hw) => state.patch({ hoursPerWeek: hw }),
+  });
 
   const promote = (id) => {
     state.patch({ compareOn: false, unit: id });

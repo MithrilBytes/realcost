@@ -70,6 +70,7 @@
 
   <section class="hero" aria-labelledby="hero-title">
     <div class="shell">
+      <p class="eyebrow">The year</p>
       <h2 id="hero-title" class="section-title">Your year, in units you choose</h2>
       <div class="chips-bar">
         <div class="chips" id="unit-chips" role="group" aria-label="Summary unit"></div>
@@ -124,9 +125,31 @@
   </div>
 
   <main>
+    <section class="day-section" aria-labelledby="day-title">
+      <div class="shell">
+        <p class="eyebrow">The day</p>
+        <h2 class="section-title" id="day-title">One working day, itemized</h2>
+        <p class="viz-info" id="day-info">Enter a salary above to lay your items along one working day.</p>
+        <div class="viz-wrap" id="day-wrap">
+          <svg id="day-svg" aria-hidden="true"></svg>
+          <div class="viz-tip" id="day-tip" hidden></div>
+        </div>
+        <p class="visually-hidden" id="day-alt"></p>
+        <p class="legend">Each dot is one catalog item, placed where your day has earned it. Select a dot to make it the summary unit.</p>
+      </div>
+    </section>
     <section class="items" id="items" aria-labelledby="items-title">
       <div class="shell">
+        <p class="eyebrow">The catalog</p>
         <h2 class="section-title" id="items-title">Everything, in your time</h2>
+        <div class="spread-block">
+          <p class="viz-info" id="spread-info">Enter a salary to place every item on one time scale.</p>
+          <div class="viz-wrap" id="spread-wrap">
+            <svg id="spread-svg" aria-hidden="true"></svg>
+            <div class="viz-tip" id="spread-tip" hidden></div>
+          </div>
+          <p class="visually-hidden" id="spread-alt"></p>
+        </div>
         <div class="controls">
           <div class="field grow">
             <label for="search" class="visually-hidden">Search items</label>
@@ -169,6 +192,7 @@
 
     <section class="ledger-panel" aria-labelledby="ledger-title">
       <div class="shell">
+        <p class="eyebrow">The ledger</p>
         <h2 class="section-title" id="ledger-title">Or your year could buy&hellip;</h2>
         <p class="ledger-hint" id="ledger-hint">Your full effective salary, spent on one thing at a time. Select a row to make it the unit above.</p>
         <ol class="ledger" id="ledger"></ol>
@@ -178,13 +202,26 @@
 
   <footer class="footer">
     <div class="shell">
+      <div class="info-cards">
+        <div class="info-card">
+          <h3>Private by design</h3>
+          <p>Your salary is used for math in this browser tab and is never transmitted, stored on a server, or measured. No analytics, no third-party requests; the page ships its own Content-Security-Policy.</p>
+        </div>
+        <div class="info-card">
+          <h3>Real prices only</h3>
+          <p><span id="info-item-count">28</span> items in <span id="info-currency-count">5</span> currencies, every price linked to its source and dated. When data is missing the item hides; nothing is estimated or converted.</p>
+        </div>
+        <div class="info-card">
+          <h3>Your assumptions</h3>
+          <p>Hours per week, weeks per year, and the take-home percentage are yours to set. Every number on this page, down to the length of a "day," follows them.</p>
+        </div>
+      </div>
       <div class="share-row">
         <button type="button" id="copy-link" class="solid">Copy shareable link</button>
         <label class="check"><input type="checkbox" id="include-salary"> Include salary in link</label>
         <span class="warning" id="share-warning" hidden>The link will contain your salary in plain text.</span>
         <span class="copied" id="copy-done" role="status"></span>
       </div>
-      <p>Prices are static, dated, and linked to their sources. Your salary is used for math in this browser tab and is never transmitted, stored, or measured; there are no analytics and no third-party requests.</p>
       <p>
         <a href="https://github.com/MithrilBytes/realcost" rel="noopener">Fork this on GitHub</a>
         <span aria-hidden="true">&middot;</span> catalog as of <span id="data-asof">2026-09</span>

@@ -1,6 +1,6 @@
 /* RealCost: a broadsheet for your working hours.
    One serif voice for numbers, one sans for UI, paper and ink, a single
-   coffee accent plus one cool counter colour. */
+   coffee accent plus one cool counter color. */
 
 @font-face {
   font-family: "Fraunces";
@@ -28,6 +28,7 @@
   --hairline: rgba(20, 20, 20, 0.16);
   --hairline-soft: rgba(20, 20, 20, 0.09);
   --warn: #8C3B2E;
+  --viz-dim: #8A7D6C;
   --tip-bg: #141414;
   --tip-ink: #FAF7F2;
   --serif: "Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif;
@@ -48,6 +49,7 @@
     --hairline: rgba(241, 234, 225, 0.2);
     --hairline-soft: rgba(241, 234, 225, 0.1);
     --warn: #E2937D;
+    --viz-dim: #756A5E;
     --tip-bg: #F1EAE1;
     --tip-ink: #17120F;
   }
@@ -285,6 +287,16 @@ button { cursor: pointer; }
   margin: 0 0 0.9em;
 }
 
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin: 0 0 0.5em;
+}
+.eyebrow + .section-title { margin-top: 0; }
+
 .chips-bar {
   display: flex;
   flex-wrap: wrap;
@@ -481,6 +493,90 @@ button { cursor: pointer; }
   .compare-bar { grid-column: 1 / -1; }
 }
 
+/* ---- Strip visualizations ---------------------------------------------- */
+
+.day-section {
+  border-bottom: 1px solid var(--hairline);
+  padding-block: clamp(36px, 5vw, 56px);
+}
+
+.viz-info {
+  color: var(--muted);
+  font-size: 0.98rem;
+  max-width: 64ch;
+  margin: 0 0 1.4em;
+}
+.viz-info strong { color: var(--ink); font-weight: 620; }
+
+.viz-wrap { position: relative; }
+.viz-wrap svg { display: block; width: 100%; }
+
+.viz-dot {
+  fill: var(--viz-dim);
+  stroke: var(--paper);
+  stroke-width: 2;
+}
+.viz-dot.sel { fill: var(--accent); }
+.viz-axis { stroke: var(--hairline); stroke-width: 1; fill: none; }
+.viz-tick {
+  fill: var(--muted);
+  font-family: var(--sans);
+  font-size: 11px;
+}
+.viz-label {
+  fill: var(--ink);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.viz-tip {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  background: var(--tip-bg);
+  color: var(--tip-ink);
+  font-size: 0.8rem;
+  padding: 4px 9px;
+  border-radius: 7px;
+  transform: translate(-50%, calc(-100% - 10px));
+  white-space: nowrap;
+  max-width: min(88vw, 420px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.viz-tip strong { font-weight: 700; }
+
+.spread-block { margin-bottom: 30px; }
+.spread-block .viz-info { margin-bottom: 1em; }
+
+/* ---- Footer info cards ------------------------------------------------- */
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.info-card {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+.info-card h3 {
+  font-family: var(--serif);
+  font-weight: 580;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin: 0 0 0.45em;
+}
+.info-card p { margin: 0; font-size: 0.88rem; }
+
 /* ---- Sticky rate bar --------------------------------------------------- */
 
 .ratebar {
@@ -536,6 +632,13 @@ button { cursor: pointer; }
   display: flex;
   flex-direction: column;
   min-height: 100%;
+}
+@media (hover: hover) {
+  .card { transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px -16px rgba(20, 14, 8, 0.35);
+  }
 }
 .card .time {
   font-family: var(--serif);

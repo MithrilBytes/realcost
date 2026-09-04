@@ -5,6 +5,7 @@ import { createState, parseSalaryInput } from "./state.js";
 import { computeDerived, formatRate } from "./calc.js";
 import { initSummary } from "./summary.js";
 import { renderGridLayout, updateGridValues, renderLedger } from "./render.js";
+import { initViz } from "./viz.js";
 
 const $ = (id) => document.getElementById(id);
 const nfWhole = new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 });
@@ -47,6 +48,18 @@ function collectEls() {
     fieldAlt: $("field-alt"),
     ratebar: $("ratebar"),
     ratebarText: $("ratebar-text"),
+    daySvg: $("day-svg"),
+    dayTip: $("day-tip"),
+    dayWrap: $("day-wrap"),
+    dayInfo: $("day-info"),
+    dayAlt: $("day-alt"),
+    spreadSvg: $("spread-svg"),
+    spreadTip: $("spread-tip"),
+    spreadWrap: $("spread-wrap"),
+    spreadInfo: $("spread-info"),
+    spreadAlt: $("spread-alt"),
+    infoItemCount: $("info-item-count"),
+    infoCurrencyCount: $("info-currency-count"),
     search: $("search"),
     category: $("category"),
     sort: $("sort"),
@@ -90,6 +103,8 @@ async function boot() {
     els.currency.appendChild(opt);
   }
   els.dataAsof.textContent = catalog.map((i) => i.asOf).sort().at(-1);
+  els.infoItemCount.textContent = String(catalog.length);
+  els.infoCurrencyCount.textContent = String(config.currencies.length);
 
   function rebuildCategories() {
     const current = state.get().category;
@@ -110,6 +125,9 @@ async function boot() {
 
   const summary = initSummary({ els, state, config, getItems });
 
+  const promoteQuiet = (id) => state.patch({ compareOn: false, unit: id });
+  const viz = initViz({ els, state, getItems, onPromote: promoteQuiet });
+
   const promote = (id) => {
     state.patch({ compareOn: false, unit: id });
     document.querySelector(".hero").scrollIntoView({
@@ -128,6 +146,7 @@ async function boot() {
     doGridLayout();
     doGridValues();
     doLedger();
+    viz.update();
     if (Object.keys(patch).length) state.patch(patch);
     else summary.update();
   };
@@ -258,6 +277,7 @@ async function boot() {
     doGridLayout();
     doGridValues();
     doLedger();
+    viz.update();
     summary.update();
   });
 
@@ -302,6 +322,7 @@ async function boot() {
       summary.update();
       doGridValues();
       doLedger();
+      viz.update();
       applyRatebar();
     } else if (has(LAYOUT_KEYS)) {
       doGridValues();
@@ -309,6 +330,7 @@ async function boot() {
     if (has(["unit", "compareOn", "compare"])) {
       summary.update();
       doLedger();
+      viz.update();
     }
     syncControls(s);
   });
@@ -322,6 +344,7 @@ async function boot() {
   doGridLayout();
   doGridValues();
   doLedger();
+  viz.update();
 }
 
 boot().catch((err) => {

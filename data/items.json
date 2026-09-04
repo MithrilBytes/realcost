@@ -6,7 +6,13 @@
     "short": "coffee",
     "unitSingular": "coffee",
     "unitPlural": "coffees",
-    "prices": { "USD": 5.47, "GBP": 3.59, "EUR": 3.61, "CAD": 5.33, "AUD": 5.65 },
+    "prices": {
+      "USD": 5.47,
+      "GBP": 3.59,
+      "EUR": 3.61,
+      "CAD": 5.33,
+      "AUD": 5.65
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -20,12 +26,18 @@
   },
   {
     "id": "pint",
-    "name": "Pint (draught beer, 0.5 L)",
+    "name": "Draft beer (0.5 L)",
     "category": "Food & Drink",
-    "short": "pint",
-    "unitSingular": "pint",
-    "unitPlural": "pints",
-    "prices": { "USD": 6.0, "GBP": 5.0, "EUR": 4.5, "CAD": 8.0, "AUD": 11.0 },
+    "short": "beer",
+    "unitSingular": "beer",
+    "unitPlural": "beers",
+    "prices": {
+      "USD": 6.0,
+      "GBP": 5.0,
+      "EUR": 4.5,
+      "CAD": 8.0,
+      "AUD": 11.0
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -35,7 +47,7 @@
       "AUD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Australia&displayCurrency=AUD"
     },
     "asOf": "2026-09",
-    "note": "Numbeo country averages, 0.5 litre domestic draught."
+    "note": "Numbeo country averages, 0.5 liter domestic draft."
   },
   {
     "id": "lunch",
@@ -44,7 +56,13 @@
     "short": "lunch",
     "unitSingular": "lunch",
     "unitPlural": "lunches",
-    "prices": { "USD": 20.0, "GBP": 16.0, "EUR": 15.0, "CAD": 25.0, "AUD": 25.0 },
+    "prices": {
+      "USD": 20.0,
+      "GBP": 16.0,
+      "EUR": 15.0,
+      "CAD": 25.0,
+      "AUD": 25.0
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -63,19 +81,31 @@
     "short": "Big Mac",
     "unitSingular": "Big Mac",
     "unitPlural": "Big Macs",
-    "prices": { "USD": 6.22, "GBP": 5.49, "EUR": 6.19, "CAD": 8.17, "AUD": 8.5 },
+    "prices": {
+      "USD": 6.22,
+      "GBP": 5.49,
+      "EUR": 6.19,
+      "CAD": 8.17,
+      "AUD": 8.5
+    },
     "source": "https://github.com/TheEconomist/big-mac-data",
     "asOf": "2026-07",
     "note": "The Economist Big Mac Index open dataset, July 2026 vintage, local_price column. EUR is the euro-area figure."
   },
   {
     "id": "milk",
-    "name": "Milk (1 L)",
+    "name": "Milk (1 liter)",
     "category": "Groceries",
     "short": "milk",
-    "unitSingular": "litre of milk",
-    "unitPlural": "litres of milk",
-    "prices": { "USD": 1.06, "GBP": 1.25, "EUR": 1.17, "CAD": 3.11, "AUD": 2.48 },
+    "unitSingular": "liter of milk",
+    "unitPlural": "liters of milk",
+    "prices": {
+      "USD": 1.06,
+      "GBP": 1.25,
+      "EUR": 1.17,
+      "CAD": 3.11,
+      "AUD": 2.48
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -85,7 +115,7 @@
       "AUD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Australia&displayCurrency=AUD"
     },
     "asOf": "2026-09",
-    "note": "Numbeo country averages, regular milk per litre."
+    "note": "Numbeo country averages, regular milk per liter."
   },
   {
     "id": "eggs",
@@ -94,7 +124,13 @@
     "short": "eggs",
     "unitSingular": "dozen eggs",
     "unitPlural": "dozens of eggs",
-    "prices": { "USD": 4.31, "GBP": 3.07, "EUR": 3.4, "CAD": 4.97, "AUD": 7.2 },
+    "prices": {
+      "USD": 4.31,
+      "GBP": 3.07,
+      "EUR": 3.4,
+      "CAD": 4.97,
+      "AUD": 7.2
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -113,7 +149,13 @@
     "short": "bread",
     "unitSingular": "loaf of bread",
     "unitPlural": "loaves of bread",
-    "prices": { "USD": 3.64, "GBP": 1.26, "EUR": 1.9, "CAD": 3.72, "AUD": 3.95 },
+    "prices": {
+      "USD": 3.64,
+      "GBP": 1.26,
+      "EUR": 1.9,
+      "CAD": 3.72,
+      "AUD": 3.95
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -127,12 +169,18 @@
   },
   {
     "id": "chicken",
-    "name": "Chicken fillets (1 kg)",
+    "name": "Chicken fillets (2.2 lb / 1 kg)",
     "category": "Groceries",
     "short": "chicken",
     "unitSingular": "kilo of chicken",
     "unitPlural": "kilos of chicken",
-    "prices": { "USD": 12.38, "GBP": 6.8, "EUR": 10.33, "CAD": 16.76, "AUD": 13.15 },
+    "prices": {
+      "USD": 12.38,
+      "GBP": 6.8,
+      "EUR": 10.33,
+      "CAD": 16.76,
+      "AUD": 13.15
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -146,12 +194,18 @@
   },
   {
     "id": "fuel-tank",
-    "name": "Tank of fuel (50 L petrol)",
+    "name": "Tank of gas (13.2 gal / 50 L)",
     "category": "Transport",
-    "short": "fuel",
-    "unitSingular": "tank of fuel",
-    "unitPlural": "tanks of fuel",
-    "prices": { "USD": 53.77, "GBP": 80.81, "EUR": 111.8, "CAD": 87.05, "AUD": 102.4 },
+    "short": "gas",
+    "unitSingular": "tank of gas",
+    "unitPlural": "tanks of gas",
+    "prices": {
+      "USD": 53.77,
+      "GBP": 80.81,
+      "EUR": 111.8,
+      "CAD": 87.05,
+      "AUD": 102.4
+    },
     "source": "https://www.eia.gov/petroleum/gasdiesel/",
     "sources": {
       "USD": "https://www.eia.gov/petroleum/gasdiesel/",
@@ -161,7 +215,7 @@
       "AUD": "https://www.aip.com.au/pricing"
     },
     "asOf": "2026-08",
-    "note": "Derived: official per-litre price x 50. Week ending late August 2026: US EIA regular 4.071 USD/gal (1.0754/L), UK DESNZ ULSP 161.61 p/L, EC Oil Bulletin Germany Euro-super 95 2.236 EUR/L, CAA Canada 174.1 c/L, AIP Australia ULP 204.8 c/L."
+    "note": "Derived: official per-liter price x 50 (13.2 gallons). Week ending late August 2026: US EIA regular 4.071 USD/gal (1.0754/L), UK DESNZ 161.61 p/L, EC Oil Bulletin Germany Euro-super 95 2.236 EUR/L, CAA Canada 174.1 c/L, AIP Australia 204.8 c/L."
   },
   {
     "id": "transit-month",
@@ -170,7 +224,13 @@
     "short": "transit",
     "unitSingular": "transit pass",
     "unitPlural": "transit passes",
-    "prices": { "USD": 65.0, "GBP": 77.33, "EUR": 63.0, "CAD": 104.0, "AUD": 132.8 },
+    "prices": {
+      "USD": 65.0,
+      "GBP": 77.33,
+      "EUR": 63.0,
+      "CAD": 104.0,
+      "AUD": 132.8
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -184,12 +244,18 @@
   },
   {
     "id": "rent-month",
-    "name": "Rent (1 bed, city centre, monthly)",
+    "name": "Rent (1 bedroom, city center, monthly)",
     "category": "Housing",
     "short": "rent",
     "unitSingular": "month of rent",
     "unitPlural": "months of rent",
-    "prices": { "USD": 1646.48, "GBP": 1004.32, "EUR": 802.94, "CAD": 1799.48, "AUD": 2243.11 },
+    "prices": {
+      "USD": 1646.48,
+      "GBP": 1004.32,
+      "EUR": 802.94,
+      "CAD": 1799.48,
+      "AUD": 2243.11
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -203,12 +269,18 @@
   },
   {
     "id": "utilities-month",
-    "name": "Utilities (85 m2 apartment, monthly)",
+    "name": "Utilities (900 sq ft apt, monthly)",
     "category": "Housing",
     "short": "utilities",
     "unitSingular": "month of utilities",
     "unitPlural": "months of utilities",
-    "prices": { "USD": 217.71, "GBP": 242.04, "EUR": 307.74, "CAD": 209.68, "AUD": 285.02 },
+    "prices": {
+      "USD": 217.71,
+      "GBP": 242.04,
+      "EUR": 307.74,
+      "CAD": 209.68,
+      "AUD": 285.02
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -218,16 +290,22 @@
       "AUD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=Australia&displayCurrency=AUD"
     },
     "asOf": "2026-09",
-    "note": "Numbeo country averages: electricity, heating, cooling, water, garbage."
+    "note": "Numbeo country averages for an 85 m2 (about 915 sq ft) apartment: electricity, heating, cooling, water, garbage."
   },
   {
     "id": "internet-month",
-    "name": "Broadband (monthly)",
+    "name": "Home internet (monthly)",
     "category": "Housing",
-    "short": "broadband",
-    "unitSingular": "month of broadband",
-    "unitPlural": "months of broadband",
-    "prices": { "USD": 73.47, "GBP": 32.03, "EUR": 43.1, "CAD": 83.97, "AUD": 82.86 },
+    "short": "internet",
+    "unitSingular": "month of internet",
+    "unitPlural": "months of internet",
+    "prices": {
+      "USD": 73.47,
+      "GBP": 32.03,
+      "EUR": 43.1,
+      "CAD": 83.97,
+      "AUD": 82.86
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -246,7 +324,13 @@
     "short": "phone",
     "unitSingular": "phone",
     "unitPlural": "phones",
-    "prices": { "USD": 829, "GBP": 799, "EUR": 949, "CAD": 1129, "AUD": 1399 },
+    "prices": {
+      "USD": 829,
+      "GBP": 799,
+      "EUR": 949,
+      "CAD": 1129,
+      "AUD": 1399
+    },
     "source": "https://www.apple.com/shop/buy-iphone/iphone-17",
     "sources": {
       "USD": "https://www.apple.com/shop/buy-iphone/iphone-17",
@@ -265,7 +349,13 @@
     "short": "laptop",
     "unitSingular": "laptop",
     "unitPlural": "laptops",
-    "prices": { "USD": 1099, "GBP": 1099, "EUR": 1199, "CAD": 1499, "AUD": 1799 },
+    "prices": {
+      "USD": 1099,
+      "GBP": 1099,
+      "EUR": 1199,
+      "CAD": 1499,
+      "AUD": 1799
+    },
     "source": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
     "sources": {
       "USD": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
@@ -284,7 +374,13 @@
     "short": "earbuds",
     "unitSingular": "pair of earbuds",
     "unitPlural": "pairs of earbuds",
-    "prices": { "USD": 249, "GBP": 219, "EUR": 249, "CAD": 329, "AUD": 429 },
+    "prices": {
+      "USD": 249,
+      "GBP": 219,
+      "EUR": 249,
+      "CAD": 329,
+      "AUD": 429
+    },
     "source": "https://www.apple.com/shop/buy-airpods/airpods-pro-3",
     "sources": {
       "USD": "https://www.apple.com/shop/buy-airpods/airpods-pro-3",
@@ -303,7 +399,11 @@
     "short": "console",
     "unitSingular": "console",
     "unitPlural": "consoles",
-    "prices": { "USD": 649, "GBP": 569.99, "EUR": 649.99 },
+    "prices": {
+      "USD": 649,
+      "GBP": 569.99,
+      "EUR": 649.99
+    },
     "source": "https://direct.playstation.com/en-us/buy-consoles/playstation5-console-1-tb",
     "sources": {
       "USD": "https://direct.playstation.com/en-us/buy-consoles/playstation5-console-1-tb",
@@ -314,13 +414,19 @@
     "note": "PlayStation Direct list prices. No official Canadian or Australian store price could be verified, so the item is hidden in those currencies."
   },
   {
-    "id": "cinema",
-    "name": "Cinema ticket",
+    "id": "movie",
+    "name": "Movie ticket",
     "category": "Entertainment",
-    "short": "cinema",
-    "unitSingular": "cinema ticket",
-    "unitPlural": "cinema tickets",
-    "prices": { "USD": 15.0, "GBP": 10.0, "EUR": 13.0, "CAD": 16.0, "AUD": 22.0 },
+    "short": "movie",
+    "unitSingular": "movie ticket",
+    "unitPlural": "movie tickets",
+    "prices": {
+      "USD": 15.0,
+      "GBP": 10.0,
+      "EUR": 13.0,
+      "CAD": 16.0,
+      "AUD": 22.0
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -339,7 +445,13 @@
     "short": "game",
     "unitSingular": "new game",
     "unitPlural": "new games",
-    "prices": { "USD": 69.99, "GBP": 69.99, "EUR": 79.99, "CAD": 89.99, "AUD": 124.95 },
+    "prices": {
+      "USD": 69.99,
+      "GBP": 69.99,
+      "EUR": 79.99,
+      "CAD": 89.99,
+      "AUD": 124.95
+    },
     "source": "https://store.playstation.com/en-us/concept/10005069",
     "sources": {
       "USD": "https://store.playstation.com/en-us/concept/10005069",
@@ -358,7 +470,13 @@
     "short": "streaming",
     "unitSingular": "month of Netflix",
     "unitPlural": "months of Netflix",
-    "prices": { "USD": 19.99, "GBP": 12.99, "EUR": 15.99, "CAD": 18.99, "AUD": 20.99 },
+    "prices": {
+      "USD": 19.99,
+      "GBP": 12.99,
+      "EUR": 15.99,
+      "CAD": 18.99,
+      "AUD": 20.99
+    },
     "source": "https://help.netflix.com/en/node/24926",
     "sources": {
       "USD": "https://help.netflix.com/en/node/24926",
@@ -377,7 +495,13 @@
     "short": "Spotify",
     "unitSingular": "month of Spotify",
     "unitPlural": "months of Spotify",
-    "prices": { "USD": 12.99, "GBP": 12.99, "EUR": 12.99, "CAD": 13.99, "AUD": 15.99 },
+    "prices": {
+      "USD": 12.99,
+      "GBP": 12.99,
+      "EUR": 12.99,
+      "CAD": 13.99,
+      "AUD": 15.99
+    },
     "source": "https://www.spotify.com/us/premium/",
     "sources": {
       "USD": "https://www.spotify.com/us/premium/",
@@ -396,7 +520,13 @@
     "short": "iCloud",
     "unitSingular": "month of iCloud",
     "unitPlural": "months of iCloud",
-    "prices": { "USD": 2.99, "GBP": 2.99, "EUR": 2.99, "CAD": 3.99, "AUD": 4.49 },
+    "prices": {
+      "USD": 2.99,
+      "GBP": 2.99,
+      "EUR": 2.99,
+      "CAD": 3.99,
+      "AUD": 4.49
+    },
     "source": "https://support.apple.com/en-us/108047",
     "asOf": "2026-07",
     "note": "Apple's own all-country pricing page, updated 2026-07."
@@ -408,7 +538,13 @@
     "short": "Prime",
     "unitSingular": "year of Prime",
     "unitPlural": "years of Prime",
-    "prices": { "USD": 139, "GBP": 95, "EUR": 89.9, "CAD": 99, "AUD": 79 },
+    "prices": {
+      "USD": 139,
+      "GBP": 95,
+      "EUR": 89.9,
+      "CAD": 99,
+      "AUD": 79
+    },
     "source": "https://www.amazon.com/amazonprime",
     "sources": {
       "USD": "https://www.amazon.com/amazonprime",
@@ -427,7 +563,13 @@
     "short": "gym",
     "unitSingular": "month of gym",
     "unitPlural": "months of gym",
-    "prices": { "USD": 45.23, "GBP": 34.54, "EUR": 36.29, "CAD": 57.54, "AUD": 81.3 },
+    "prices": {
+      "USD": 45.23,
+      "GBP": 34.54,
+      "EUR": 36.29,
+      "CAD": 57.54,
+      "AUD": 81.3
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -446,7 +588,13 @@
     "short": "jeans",
     "unitSingular": "pair of jeans",
     "unitPlural": "pairs of jeans",
-    "prices": { "USD": 53.67, "GBP": 68.21, "EUR": 79.55, "CAD": 76.23, "AUD": 113.33 },
+    "prices": {
+      "USD": 53.67,
+      "GBP": 68.21,
+      "EUR": 79.55,
+      "CAD": 76.23,
+      "AUD": 113.33
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -459,13 +607,19 @@
     "note": "Numbeo country averages."
   },
   {
-    "id": "trainers",
-    "name": "Trainers (mid-range)",
+    "id": "sneakers",
+    "name": "Sneakers (mid-range)",
     "category": "Clothing",
-    "short": "trainers",
-    "unitSingular": "pair of trainers",
-    "unitPlural": "pairs of trainers",
-    "prices": { "USD": 93.14, "GBP": 76.82, "EUR": 89.23, "CAD": 122.96, "AUD": 161.59 },
+    "short": "sneakers",
+    "unitSingular": "pair of sneakers",
+    "unitPlural": "pairs of sneakers",
+    "prices": {
+      "USD": 93.14,
+      "GBP": 76.82,
+      "EUR": 89.23,
+      "CAD": 122.96,
+      "AUD": 161.59
+    },
     "source": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
     "sources": {
       "USD": "https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States&displayCurrency=USD",
@@ -484,7 +638,9 @@
     "short": "dentist",
     "unitSingular": "dental cleaning",
     "unitPlural": "dental cleanings",
-    "prices": { "USD": 200 },
+    "prices": {
+      "USD": 200
+    },
     "source": "https://carecostindex.com/procedure/dental-cleaning",
     "asOf": "2026-04",
     "note": "US national average for a routine adult prophylaxis without insurance, attributed to the ADA Survey of Dental Fees 2025. Published ranges run roughly 75 to 200. USD only by design."
@@ -496,7 +652,13 @@
     "short": "sofa",
     "unitSingular": "sofa",
     "unitPlural": "sofas",
-    "prices": { "USD": 799, "GBP": 449, "EUR": 499, "CAD": 699, "AUD": 699 },
+    "prices": {
+      "USD": 799,
+      "GBP": 449,
+      "EUR": 499,
+      "CAD": 699,
+      "AUD": 699
+    },
     "source": "https://www.ikea.com/us/en/p/kivik-sofa-tibbleby-beige-gray-s39440593/",
     "sources": {
       "USD": "https://www.ikea.com/us/en/p/kivik-sofa-tibbleby-beige-gray-s39440593/",

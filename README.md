@@ -2,7 +2,7 @@
 
 Prices, in hours of your life.
 
-Enter your real annual salary and every item in the catalog becomes the working time it takes to earn. A coffee becomes 13 minutes. A phone becomes a week and a half. The salary summary shows what your whole working year buys in any unit you pick: 8,775 coffees, 893 tanks of fuel, 29 months of rent, drawn one dot per unit.
+Enter your real annual salary and every item in the catalog becomes the working time it takes to earn. A coffee becomes 13 minutes. A phone becomes a week and a half. The salary summary shows what your whole working year buys in any unit you pick: 8,775 coffees, 893 tanks of gas, 29 months of rent, drawn one dot per unit. Two strip charts place the catalog on your own clock: everything you earn inside a single working day, and the full spread from minutes to months on a log scale.
 
 Everything runs in your browser. The salary is used for arithmetic on the page and is never transmitted, stored on a server, or measured by analytics. There are no third-party requests of any kind; a Content-Security-Policy meta tag enforces same-origin scripts, styles, and fonts.
 
@@ -29,7 +29,7 @@ Prices live in [data/items.json](data/items.json) and are validated against [dat
 - Every item needs `id`, `name`, `category`, at least one currency in `prices`, a `source` URL, and an `asOf` month.
 - Prices are real, cited, and dated. Nothing is invented, estimated, or converted between currencies.
 - If an item has no price in the selected currency, it is hidden there rather than guessed at.
-- Per-currency `sources` and a `note` are supported for items whose figures come from different pages, and derived figures (the 50 litre fuel tank) must state their arithmetic in the note.
+- Per-currency `sources` and a `note` are supported for items whose figures come from different pages, and derived figures (the 13-gallon gas tank) must state their arithmetic in the note.
 - Duplicate ids fail the build.
 
 Settings such as the default unit chips and dot-field thresholds live in [data/summary.json](data/summary.json).

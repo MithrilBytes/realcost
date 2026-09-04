@@ -1,17 +1,29 @@
 {
-  "currencies": ["USD", "GBP", "EUR", "CAD", "AUD"],
+  "currencies": [
+    "USD",
+    "GBP",
+    "EUR",
+    "CAD",
+    "AUD"
+  ],
   "defaultUnit": "coffee",
   "chips": [
     "coffee",
     "pint",
     "lunch",
-    "cinema",
+    "movie",
     "fuel-tank",
     "streaming-month",
-    "trainers",
+    "sneakers",
     "rent-month"
   ],
-  "compareSeed": ["coffee", "pint", "fuel-tank", "streaming-month", "rent-month"],
+  "compareSeed": [
+    "coffee",
+    "pint",
+    "fuel-tank",
+    "streaming-month",
+    "rent-month"
+  ],
   "compareMax": 5,
   "dotField": {
     "tileBelow": 50,

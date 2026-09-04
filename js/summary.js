@@ -95,7 +95,7 @@ class DotField {
 
   colors() {
     const cs = getComputedStyle(this.canvas);
-    return { accent: cs.getPropertyValue("--accent").trim() || "#5A3A22" };
+    return { accent: cs.getPropertyValue("--accent").trim() || "#4F46E5" };
   }
 
   render(animate) {

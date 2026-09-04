@@ -2,7 +2,7 @@
 
 Prices, in hours of your life.
 
-Enter your real annual salary and every item in the catalog becomes the working time it takes to earn. A coffee becomes 13 minutes. A phone becomes a week and a half. The salary summary shows what your whole working year buys in any unit you pick: 8,775 coffees, 893 tanks of gas, 29 months of rent, drawn one dot per unit. Two strip charts place the catalog on your own clock: everything you earn inside a single working day, and the full spread from minutes to months on a log scale.
+Enter your real annual salary and every item in the catalog becomes the working time it takes to earn. A coffee becomes 13 minutes. A phone becomes a week and a half. The salary summary shows what your whole working year buys in any unit you pick: 8,775 coffees, 893 tanks of gas, 29 months of rent, drawn one dot per unit. Around it sit four more views: everything you earn inside a single working day, the full catalog spread from minutes to months on a log scale, a donut of what buying one of everything costs by category, and a curve of what one hour is worth as the workweek changes.
 
 Everything runs in your browser. The salary is used for arithmetic on the page and is never transmitted, stored on a server, or measured by analytics. There are no third-party requests of any kind; a Content-Security-Policy meta tag enforces same-origin scripts, styles, and fonts.
 
@@ -57,7 +57,7 @@ Covers the calculation and formatting tiers (minutes, hours, days, working years
 
 ## Stack
 
-Plain HTML, CSS, and vanilla ES modules. No framework, no build step, no dependencies. Fonts (Fraunces and Inter, OFL licensed) are self-hosted in [fonts/](fonts/).
+Plain HTML, CSS, and vanilla ES modules. No framework, no build step, no dependencies. Charts are hand-built SVG with colorblind-validated palettes. Inter (variable, OFL licensed) is self-hosted in [fonts/](fonts/).
 
 ## License
 
